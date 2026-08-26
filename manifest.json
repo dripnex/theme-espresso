@@ -1,0 +1,7 @@
+{
+  "id": "theme-espresso",
+  "name": "Espresso",
+  "version": "0.1.0",
+  "description": "Coffee-shop dark. Roast brown, cream foam.",
+  "main": "dist/index.js"
+}
