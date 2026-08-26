@@ -1,0 +1,61 @@
+/**
+ * Espresso — satellite Dripnex theme.
+ * Token layer only. Same contract as a community theme repo.
+ * Must be CommonJS.
+ *
+ * Coffee-shop dark: roast brown, cream foam text, caramel accent.
+ * Not walnut (wood cream #b8895a). Not ember (frosted copper).
+ * Not phosphor (amber CRT). Not ink (true black). Not noir (crimson cinema).
+ */
+
+const TOKENS = {
+  '--bg-base': '#1a120e',
+  '--bg-surface': '#241914',
+  '--bg-elevated': '#302218',
+  '--bg-inset': '#120c0a',
+  '--bg-hover': 'rgba(240, 228, 208, 0.06)',
+  '--bg-active': 'rgba(240, 228, 208, 0.1)',
+  '--text-primary': '#f0e4d0',
+  '--text-secondary': 'rgba(240, 228, 208, 0.74)',
+  '--text-muted': 'rgba(240, 228, 208, 0.52)',
+  '--text-faint': 'rgba(240, 228, 208, 0.34)',
+  '--border': 'rgba(240, 228, 208, 0.12)',
+  '--border-subtle': 'rgba(240, 228, 208, 0.07)',
+  '--border-strong': 'rgba(240, 228, 208, 0.18)',
+  '--accent': '#c9956c',
+  '--accent-hover': '#dbab84',
+  '--accent-muted': 'rgba(201, 149, 108, 0.2)',
+  '--accent-subtle': 'rgba(201, 149, 108, 0.1)',
+  '--glass-bg': 'rgba(26, 18, 14, 0.92)',
+  '--glass-border': 'rgba(240, 228, 208, 0.1)',
+  '--glass-bg-menu': 'rgba(48, 34, 24, 0.96)',
+  '--glass-border-menu': 'rgba(240, 228, 208, 0.1)',
+  '--status-active': '#c9956c',
+  '--status-on-hold': '#c4a35a',
+  '--status-completed': '#7aaa6a',
+  '--status-dropped': '#c46b6b',
+};
+
+module.exports = {
+  id: 'theme-espresso',
+  name: 'Espresso',
+  version: '0.1.0',
+  description: 'Coffee-shop dark. Roast brown, cream foam.',
+
+  activate(context) {
+    const remove = context.registerTheme({
+      id: 'dripnex-espresso',
+      name: 'Espresso',
+      description: 'Morning roast after midnight. Caramel marks on espresso black.',
+      author: 'Dripnex',
+      colorScheme: 'dark',
+      tokens: TOKENS,
+    });
+
+    return {
+      dispose() {
+        remove();
+      },
+    };
+  },
+};
